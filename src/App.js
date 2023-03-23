@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import logo from './assets/images/meetroom.png';
+import cover from './assets/images/cover.jpg';
+import avatar from './assets/images/avatar.jpg';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app-wrapper">
+      <header className="header">
+        <img className="header-logo" src={logo} alt='logo'/>
       </header>
+      <div className="sidebar">
+        <nav className="sidebar-nav">
+          <ul className="sidebar-nav__list">
+            <li><a href={'/'}>Profile</a></li>
+            <li><a href={'/'}>Messages</a></li>
+            <li><a href={'/'}>News</a></li>
+            <li><a href={'/'}>Music</a></li>
+            <li><a href={'/'}>Settings</a></li>
+          </ul>
+        </nav>
+      </div>
+      <main className="main">
+        <img className="main-cover" src={cover} alt='cover'/>
+        <div className="profile">
+          <img className="profile-avatar" src={avatar} alt='avatar'/>
+        </div>
+      </main>
     </div>
   );
 }
