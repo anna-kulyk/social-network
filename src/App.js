@@ -1,14 +1,12 @@
-import logo from './assets/images/meetroom.png';
 import cover from './assets/images/cover.jpg';
 import avatar from './assets/images/avatar.jpg';
 import './App.css';
+import Header from './components/Header';
 
 const App = () => {
   return (
     <div className="app-wrapper">
-      <header className="header">
-        <img className="header-logo" src={logo} alt='logo'/>
-      </header>
+      <Header />
       <div className="sidebar">
         <nav className="sidebar-nav">
           <ul className="sidebar-nav__list">
@@ -24,6 +22,19 @@ const App = () => {
         <img className="main-cover" src={cover} alt='cover'/>
         <div className="profile">
           <img className="profile-avatar" src={avatar} alt='avatar'/>
+          <div className="profile-info"></div>
+        </div>
+        <div className="posts">
+          <div className="posts-title">My posts</div>
+          <div className="posts-form">
+            <form action="" className="new-post-form">
+              <input type="text" className="new-post-input" placeholder='What do you want to post?' />
+              <button className="new-post-send">Send</button>
+            </form>
+          </div>
+          <div className="posts-list">
+            <div className="posts-element">post</div>
+          </div>
         </div>
       </main>
     </div>
