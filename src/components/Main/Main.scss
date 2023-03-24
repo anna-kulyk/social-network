@@ -1,0 +1,19 @@
+.main {
+    width: 100%;
+    flex: 1 1 auto;
+    margin-bottom: 1rem; //temp
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        width: 100%;
+        flex: 1 1 auto;
+        display: flex;
+    }
+
+    &__body {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+    }
+}

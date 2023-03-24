@@ -1,9 +1,80 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;font-family: 'Roboto';line-height:1;font-size:16px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;font-family: 'Roboto';}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+a{color:inherit}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("./assets/fonts/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url("./assets/fonts/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
 }
 
-img {
-  display: block;
+.container {
+  max-width: 1440px;
+  padding: 0px 15px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+._section {
+  background-color:#ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'icons';
+  font-display: swap;
+  src: url("./assets/fonts/icons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="_icon-"], [class*=" _icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-user:before {
+  content: "\e900";
+}
+._icon-comment:before {
+  content: "\e901";
+}
+._icon-setting:before {
+  content: "\e902";
+}
+._icon-music:before {
+  content: "\e903";
+}
+._icon-news:before {
+  content: "\e904";
 }

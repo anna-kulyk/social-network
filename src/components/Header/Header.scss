@@ -1,0 +1,20 @@
+.header {
+    font-size: calc(10px + 2vmin);
+    color: white;
+    background-color: #ffffff;
+    margin: 0px 0px 1rem 0px;
+    border-bottom: 1px solid #eaeaea;
+
+    // &__container {}
+
+    &__body {
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        height: 3rem;
+    }
+}

@@ -1,0 +1,20 @@
+
+.profile {
+    flex: 1 1 auto;
+
+    &__cover {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    &__user {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__avatar {
+        width: 150px;
+        border-radius: 50%;
+    }
+}
