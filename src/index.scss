@@ -10,7 +10,7 @@ button{cursor:pointer;font-family: 'Roboto';}
 button::-moz-focus-inner{padding:0;border:0;}
 a,a:visited{text-decoration:none;}
 a:hover{text-decoration:none;}
-a{color:inherit}
+a{color:inherit;font-family: 'Roboto';}
 ul li{list-style:none;}
 img{vertical-align:top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
@@ -40,6 +40,21 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
   overflow: hidden;
 }
 
+._btn {
+  color: #ffffff;
+  background-color: #0E67B4;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  transition: background-color 0.3s ease 0s;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: #0c4474;
+    }
+}
+}
+
 @font-face {
   font-family: 'icons';
   font-display: swap;
@@ -49,7 +64,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
   font-display: block;
 }
 
-[class^="_icon-"], [class*=" _icon-"] {
+[class^="_icon-"]:before, [class*=" _icon-"]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icons' !important;
   font-style: normal;
