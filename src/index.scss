@@ -26,7 +26,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
   font-weight: 700;
 }
 
-.container {
+._container {
   max-width: 1440px;
   padding: 0px 15px;
   margin: 0 auto;
@@ -52,7 +52,12 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
     &:hover {
       background-color: #0c4474;
     }
+  }
 }
+
+._avatar_small {
+  height: 3rem;
+  border-radius: 50%;
 }
 
 @font-face {
@@ -78,6 +83,9 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-home:before {
+  content: "\e905";
+}
 ._icon-user:before {
   content: "\e900";
 }
