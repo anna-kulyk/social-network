@@ -14,7 +14,8 @@ const Post = (props) => {
                     <div className="post__date"></div>
                 </div>
             </div>
-            <div className="post__content">{props.message}</div>
+            <div className="post__content">{ props.message }</div>
+            <div className="post__likes">Likes <span>{ props.likeCount }</span></div>
         </div>
     );
 };

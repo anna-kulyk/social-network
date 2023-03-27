@@ -29,14 +29,18 @@
         padding: 10px;
         border-radius: 15px;
         border: 1px solid #ffffff;
-        transition: border-color 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
 
         @media (hover: hover) {
             &:hover {
-                // border-color: #0c4474;
                 background-color: var(--background-color);
                 border-color: var(--border-color);
             }
+        }
+
+        &.active {
+            background-color: var(--background-color);
+            border-color: var(--border-color);
         }
     }
 }
