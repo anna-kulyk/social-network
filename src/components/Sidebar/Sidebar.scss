@@ -28,12 +28,14 @@
         gap: 1rem;
         padding: 10px;
         border-radius: 15px;
-        border: 2px solid #ffffff;
+        border: 1px solid #ffffff;
         transition: border-color 0.3s ease 0s;
 
         @media (hover: hover) {
             &:hover {
-                border-color: #0c4474;
+                // border-color: #0c4474;
+                background-color: var(--background-color);
+                border-color: var(--border-color);
             }
         }
     }

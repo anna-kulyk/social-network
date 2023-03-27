@@ -1,9 +1,9 @@
 .header {
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: var(--main-color);
     background-color: #ffffff;
     margin: 0px 0px 1rem 0px;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid var(--border-color);
 
     // &__container {}
 

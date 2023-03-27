@@ -85,9 +85,9 @@
     &__input {
         flex: 1 1 auto;
         padding: 1rem;
-        background-color: #f9fafb;
+        background-color: var(--background-color);
         border-radius: 15px;
-        border: 1px solid #eaeaea;
+        border: 1px solid var(--border-color);
         font-size: 1rem;
     }
 

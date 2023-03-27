@@ -6,8 +6,8 @@
     width: 100%;
     display: flex;
 	  flex-direction: column;
-    background-color: #f9fafb;
-    color: #0c4474;
+    background-color: var(--background-color);
+    color: var(--main-color);
   }
 }
 
