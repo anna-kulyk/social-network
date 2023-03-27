@@ -40,6 +40,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
   overflow: hidden;
 }
 
+._page-section {
+  flex: 1 1 auto;
+}
+
 ._btn {
   color: #ffffff;
   background-color: var(--logo-color);

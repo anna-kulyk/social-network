@@ -1,6 +1,7 @@
 import './App.scss';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
+import Messages from './components/Messages/Messages';
 import Profile from './components/Profile/Profile';
 import Sidebar from './components/Sidebar/Sidebar';
 
@@ -11,7 +12,8 @@ const App = () => {
         <Header />
         <Main>
           <Sidebar />
-          <Profile />
+          {/* <Profile /> */}
+          <Messages />
         </Main>
       </div>
     </div>

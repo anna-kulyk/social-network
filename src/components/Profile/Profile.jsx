@@ -6,7 +6,7 @@ import Posts from './Posts/Posts';
 
 const Profile = () => {
     return (
-        <div className="profile">
+        <div className="profile _page-section">
             <div className="profile__header _section">
                 <img className="profile__cover" src={cover} alt='cover'/>
                 <div className="profile__user">
