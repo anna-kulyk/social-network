@@ -1,0 +1,15 @@
+.nopage {
+    text-align: center;
+    color: var(--logo-color);
+
+    &__error-number {
+        font-size: 8rem;
+        font-weight: bold;
+        margin: 4rem 0;
+    }
+
+    &__error-text {
+        font-size: 2rem;
+        margin-bottom: 4rem;
+    }
+}
