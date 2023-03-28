@@ -3,6 +3,7 @@ import './Profile.scss';
 import cover from '../../assets/images/cover.jpg';
 import avatar from '../../assets/images/avatar.jpg';
 import Posts from './Posts/Posts';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
     return (
@@ -26,9 +27,9 @@ const Profile = () => {
                     <form action="" className="new-post__form">
                         <div className="new-post__row">
                             <div className="new-post__img">
-                                <a href={'/'}>
+                                <Link to='/'>
                                     <img className="new-post__avatar _avatar_small" src={avatar} alt='avatar'/>
-                                </a>
+                                </Link>
                             </div>
                             <input type="text" 
                                    className="new-post__input" 
