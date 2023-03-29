@@ -33,6 +33,14 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
   height: 100%;
 }
 
+._input {
+  padding: 1rem;
+  background-color: var(--background-color);
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+}
+
 ._section {
   background-color:#ffffff;
   border: 1px solid var(--border-color);
@@ -42,6 +50,11 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 
 ._page-section {
   flex: 1 1 auto;
+}
+
+._page-title {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 ._btn {
@@ -61,6 +74,8 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 
 ._avatar_small {
   height: 3rem;
+  width: 3rem;
+  object-fit: cover;
   border-radius: 50%;
 }
 

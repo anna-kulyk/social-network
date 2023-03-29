@@ -32,7 +32,7 @@ const Profile = () => {
                                 </Link>
                             </div>
                             <input type="text" 
-                                   className="new-post__input" 
+                                   className="new-post__input _input" 
                                    placeholder='What do you want to post?' />
                         </div>
                         <button className="new-post__btn _btn">Post</button>
