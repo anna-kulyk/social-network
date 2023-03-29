@@ -61,7 +61,6 @@ const Messages = () => {
                                placeholder='Write a message...' />
                         <button type='submit' className='new-message__send _btn'>Send</button>
                     </form>
-
                 </div>
             </div>
         </div>
