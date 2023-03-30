@@ -4,7 +4,7 @@ Social network react application that displays user's profile, messages and feed
 
 <!-- ## [Check the live demo](https://open-weather-react.netlify.app/) -->
 
-![Screenshot](https://raw.githubusercontent.com/anna-kulyk/social-network/master/src/assets/images/openweather.jpg)
+![Screenshot](https://raw.githubusercontent.com/anna-kulyk/social-network/master/src/assets/images/meetroom.jpg)
 
 ## Installation
 
@@ -41,10 +41,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 - Responsive design: The project uses CSS to create a responsive design that adjusts to different screen sizes and devices. This ensures that the weather forecast is readable and accessible on any device.
 
 - Component-based architecture: The project uses React's component-based architecture to organize the code into reusable, modular components. This makes it easy to add new features and maintain the codebase over time.
+<!--
 
 ## Acknowledgements
 
-- [OpenWeatherMap API](https://openweathermap.org/api)
+- [OpenWeatherMap API](https://openweathermap.org/api) -->
 
 ## Author
 
