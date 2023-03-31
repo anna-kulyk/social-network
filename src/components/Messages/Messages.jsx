@@ -1,7 +1,30 @@
 import React from 'react';
 import './Messages.scss';
-// import avatar from '../../assets/images/avatar.jpg';
-import { Link } from 'react-router-dom';
+import avatar from '../../assets/images/avatar.jpg';
+import { NavLink, Link } from 'react-router-dom';
+
+const users = {
+    0: {
+        id: 0,
+        name: 'Anna Sandpiper',
+        avatar: {avatar}
+    },
+    1: {
+        id: 1,
+        name: 'Hendry Katla',
+        avatar: 'https://images.unsplash.com/photo-1654110455429-cf322b40a906?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80'
+    },
+    2: {
+        id: 2,
+        name: 'Liselotte Márk',
+        avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+    },
+    3: {
+        id: 3,
+        name: 'Yuli Nabu',
+        avatar: 'https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80'
+    }
+}
 
 const Messages = () => {
     return (
@@ -16,18 +39,9 @@ const Messages = () => {
                            placeholder='Search messages' />
                 </div>
                 <div className="chats__users">
-                    <Link to='/messages' className='chats__user'>
-                        <img src='https://images.unsplash.com/photo-1654110455429-cf322b40a906?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80' alt="avatar" className="chats__avatar _avatar_small" />
-                        <div className="chats__username">Hendry Katla</div>
-                    </Link>
-                    <Link to='/messages' className='chats__user'>
-                        <img src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' alt="avatar" className="chats__avatar _avatar_small" />
-                        <div className="chats__username">Liselotte Márk</div>
-                    </Link>
-                    <Link to='/messages' className='chats__user'>
-                        <img src='https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80' alt="avatar" className="chats__avatar _avatar_small" />
-                        <div className="chats__username">Yuli Nabu</div>
-                    </Link>
+                    <ChatUser userId={1} />
+                    <ChatUser userId={2} />
+                    <ChatUser userId={3} />
                 </div>
             </div>
             <div className="messages__chat _section">
@@ -38,19 +52,8 @@ const Messages = () => {
                     </Link>
                 </div>
                 <div className="messages__body">
-                    <div className="messages__message message message_left">
-                        <Link to='/messages' className='message__user'>
-                            <img src='https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80' alt="avatar" className="message__avatar _avatar_small" />
-                        </Link>
-                        <div className="message__content">
-                            Hi, how are you?
-                        </div>
-                    </div>
-                    <div className="messages__message message message_right">
-                        <div className="message__content">
-                            Good, how are you?
-                        </div>
-                    </div>
+                    <Message userId={3} messageText=' Hi, how are you?' />
+                    <Message userId={0} messageText='Good, how are you?' />
                 </div>
                 <div className="messages__footer">
                     <form className='messages__new-message new-message' action="" method="post">
@@ -65,6 +68,39 @@ const Messages = () => {
             </div>
         </div>
     );
+};
+
+const ChatUser = ({ userId }) => {
+    return (
+        <NavLink to={`/messages/${ userId }`} className='chats__user'>
+            <img src={ users[userId].avatar } alt="avatar" className="chats__avatar _avatar_small" />
+            <div className="chats__username">{ users[userId].name }</div>
+        </NavLink>
+    );
+};
+
+const Message = ({userId, messageText}) => {
+    if (userId === 0) {
+        return (
+            <div className="messages__message message message_right">
+                <div className="message__content">
+                    { messageText }
+                </div>
+            </div>
+        )
+    }
+    else {
+        return (
+            <div className="messages__message message message_left">
+                <Link to='/messages' className='message__user'>
+                    <img src={ users[userId].avatar } alt="avatar" className="message__avatar _avatar_small" />
+                </Link>
+                <div className="message__content">
+                    { messageText }
+                </div>
+            </div>
+        );
+    }
 };
 
 export default Messages;
