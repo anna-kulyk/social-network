@@ -1,6 +1,6 @@
 # Social Network Meetroom
 
-Social network react application that displays user's profile, messages and feed.
+Social network react application that displays user's profile, messages and feed. (Project in progress...)
 
 <!-- ## [Check the live demo](https://open-weather-react.netlify.app/) -->
 

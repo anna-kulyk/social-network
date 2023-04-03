@@ -3,28 +3,38 @@ import './Messages.scss';
 import avatar from '../../assets/images/avatar.jpg';
 import { NavLink, Link } from 'react-router-dom';
 
-const users = {
-    0: {
+const users = [
+    {
         id: 0,
         name: 'Anna Sandpiper',
         avatar: {avatar}
     },
-    1: {
+    {
         id: 1,
         name: 'Hendry Katla',
         avatar: 'https://images.unsplash.com/photo-1654110455429-cf322b40a906?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80'
     },
-    2: {
+    {
         id: 2,
         name: 'Liselotte Márk',
         avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
     },
-    3: {
+    {
         id: 3,
         name: 'Yuli Nabu',
         avatar: 'https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80'
     }
-}
+]
+const messages = [
+    {
+        userId: 3,
+        message: 'Hi, how are you?'
+    },
+    {
+        userId: 0,
+        message: 'Good, how are you?'
+    }
+]
 
 const Messages = () => {
     return (
@@ -52,8 +62,8 @@ const Messages = () => {
                     </Link>
                 </div>
                 <div className="messages__body">
-                    <Message userId={3} messageText=' Hi, how are you?' />
-                    <Message userId={0} messageText='Good, how are you?' />
+                    <Message messageId={0} />
+                    <Message messageId={1} />
                 </div>
                 <div className="messages__footer">
                     <form className='messages__new-message new-message' action="" method="post">
@@ -79,12 +89,16 @@ const ChatUser = ({ userId }) => {
     );
 };
 
-const Message = ({userId, messageText}) => {
+const Message = ({messageId}) => {
+
+    const userId = messages[messageId].userId;
+    const message = messages[messageId].message;
+
     if (userId === 0) {
         return (
             <div className="messages__message message message_right">
                 <div className="message__content">
-                    { messageText }
+                    { message }
                 </div>
             </div>
         )
@@ -96,7 +110,7 @@ const Message = ({userId, messageText}) => {
                     <img src={ users[userId].avatar } alt="avatar" className="message__avatar _avatar_small" />
                 </Link>
                 <div className="message__content">
-                    { messageText }
+                    { message }
                 </div>
             </div>
         );
