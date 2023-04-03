@@ -14,12 +14,14 @@ const posts = [
 ]
 
 const Posts = () => {
+
+    let postElements = posts.map((post, index) => <Post message={post.post} likeCount={post.likes} key={index} />);
+
     return (
         <div className="content__posts posts">
             <div className="posts__title _page-title">Posts</div>
             <div className="posts__list">
-                <Post message={posts[0].post} likeCount={posts[0].likes} />
-                <Post message={posts[1].post} likeCount={posts[1].likes} />
+                { postElements }
             </div>
         </div>
     );

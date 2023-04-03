@@ -1,14 +1,9 @@
 import React from 'react';
 import './Messages.scss';
-import avatar from '../../assets/images/avatar.jpg';
+// import avatar from '../../assets/images/avatar.jpg';
 import { NavLink, Link } from 'react-router-dom';
 
 const users = [
-    {
-        id: 0,
-        name: 'Anna Sandpiper',
-        avatar: {avatar}
-    },
     {
         id: 1,
         name: 'Hendry Katla',
@@ -37,6 +32,10 @@ const messages = [
 ]
 
 const Messages = () => {
+
+    let chatUserElements = users.map(user => <ChatUser userId={user.id} userName={user.name} userAvatar={user.avatar} key={user.id} />);
+    let messageElements = messages.map((message, index) => <Message userId={message.userId} messageContent={message.message} key={index} />);
+
     return (
         <div className='messages _page-section'>
             <div className="messages__chats chats _section">
@@ -49,9 +48,7 @@ const Messages = () => {
                            placeholder='Search messages' />
                 </div>
                 <div className="chats__users">
-                    <ChatUser userId={1} />
-                    <ChatUser userId={2} />
-                    <ChatUser userId={3} />
+                    { chatUserElements }
                 </div>
             </div>
             <div className="messages__chat _section">
@@ -62,8 +59,7 @@ const Messages = () => {
                     </Link>
                 </div>
                 <div className="messages__body">
-                    <Message messageId={0} />
-                    <Message messageId={1} />
+                    { messageElements }
                 </div>
                 <div className="messages__footer">
                     <form className='messages__new-message new-message' action="" method="post">
@@ -80,25 +76,22 @@ const Messages = () => {
     );
 };
 
-const ChatUser = ({ userId }) => {
+const ChatUser = ({ userId, userName, userAvatar }) => {
     return (
         <NavLink to={`/messages/${ userId }`} className='chats__user'>
-            <img src={ users[userId].avatar } alt="avatar" className="chats__avatar _avatar_small" />
-            <div className="chats__username">{ users[userId].name }</div>
+            <img src={ userAvatar } alt="avatar" className="chats__avatar _avatar_small" />
+            <div className="chats__username">{ userName }</div>
         </NavLink>
     );
 };
 
-const Message = ({messageId}) => {
-
-    const userId = messages[messageId].userId;
-    const message = messages[messageId].message;
+const Message = ({ userId, messageContent }) => {
 
     if (userId === 0) {
         return (
             <div className="messages__message message message_right">
                 <div className="message__content">
-                    { message }
+                    { messageContent }
                 </div>
             </div>
         )
@@ -107,10 +100,10 @@ const Message = ({messageId}) => {
         return (
             <div className="messages__message message message_left">
                 <Link to='/messages' className='message__user'>
-                    <img src={ users[userId].avatar } alt="avatar" className="message__avatar _avatar_small" />
+                    <img src={ users[userId-1].avatar } alt="avatar" className="message__avatar _avatar_small" />
                 </Link>
                 <div className="message__content">
-                    { message }
+                    { messageContent }
                 </div>
             </div>
         );
