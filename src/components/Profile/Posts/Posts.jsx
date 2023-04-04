@@ -1,20 +1,11 @@
 import React from 'react';
 import Post from './Post/Post';
 import './Posts.scss';
-
-const posts = [
-    {
-        post: 'Hi, how are you?',
-        likes: 3
-    },
-    {
-        post: `It's my first post`,
-        likes: 15
-    }
-]
+import { useSelector } from 'react-redux';
 
 const Posts = () => {
 
+    const posts = useSelector((state) => state.posts.value);
     let postElements = posts.map((post, index) => <Post message={post.post} likeCount={post.likes} key={index} />);
 
     return (
