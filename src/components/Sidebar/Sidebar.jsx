@@ -11,7 +11,7 @@ const Sidebar = () => {
                         <li><NavLink className="nav__link _icon-user" to='/'>Profile</NavLink></li>
                         <li><NavLink className="nav__link _icon-comment" to='/messages'>Messages</NavLink></li>
                         <li><NavLink className="nav__link _icon-news" to='/news'>News</NavLink></li>
-                        <li><NavLink className="nav__link _icon-music" to='/music'>Music</NavLink></li>
+                        <li><NavLink className="nav__link _icon-friends" to='/friends'>Friends</NavLink></li>
                         <li><NavLink className="nav__link _icon-setting" to='/settings'>Settings</NavLink></li>
                     </ul>
                 </nav>
