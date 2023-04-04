@@ -1,7 +1,9 @@
 import React from 'react';
 import './Messages.scss';
 // import avatar from '../../assets/images/avatar.jpg';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import ChatUser from './ChatUser/ChatUser';
+import Message from './Message/Message';
 
 const users = [
     {
@@ -74,40 +76,6 @@ const Messages = () => {
             </div>
         </div>
     );
-};
-
-const ChatUser = ({ userId, userName, userAvatar }) => {
-    return (
-        <NavLink to={`/messages/${ userId }`} className='chats__user'>
-            <img src={ userAvatar } alt="avatar" className="chats__avatar _avatar_small" />
-            <div className="chats__username">{ userName }</div>
-        </NavLink>
-    );
-};
-
-const Message = ({ userId, messageContent }) => {
-
-    if (userId === 0) {
-        return (
-            <div className="messages__message message message_right">
-                <div className="message__content">
-                    { messageContent }
-                </div>
-            </div>
-        )
-    }
-    else {
-        return (
-            <div className="messages__message message message_left">
-                <Link to='/messages' className='message__user'>
-                    <img src={ users[userId-1].avatar } alt="avatar" className="message__avatar _avatar_small" />
-                </Link>
-                <div className="message__content">
-                    { messageContent }
-                </div>
-            </div>
-        );
-    }
 };
 
 export default Messages;

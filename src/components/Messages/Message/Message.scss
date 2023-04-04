@@ -1,0 +1,23 @@
+.message {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1rem;
+
+    &_right {
+        align-self: flex-end;
+    }
+
+    &_left &__content {
+        padding: 1rem;
+        background-color: var(--logo-color);
+        color: #ffffff;
+        border-radius: 15px 15px 15px 0;
+    }
+
+    &_right &__content {
+        padding: 1rem;
+        background-color: var(--background-color);
+        border-radius: 15px 15px 0 15px;
+    }
+}
