@@ -4,6 +4,7 @@ import './Messages.scss';
 import { Link } from 'react-router-dom';
 import Chat from './ChatUser/Chat';
 import Message from './Message/Message';
+import { useSelector } from 'react-redux';
 
 const users = [
     {
@@ -22,18 +23,10 @@ const users = [
         avatar: 'https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80'
     }
 ]
-const messages = [
-    {
-        userId: 3,
-        message: 'Hi, how are you?'
-    },
-    {
-        userId: 0,
-        message: 'Good, how are you?'
-    }
-]
 
 const Messages = () => {
+
+    const messages = useSelector((state) => state.messages.value);
 
     let chatElements = users.map(user => <Chat id={user.id} name={user.name} avatar={user.avatar} key={user.id} />);
     let messageElements = messages.map((message, index) => <Message userId={message.userId} messageContent={message.message} key={index} />);
