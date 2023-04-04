@@ -1,0 +1,14 @@
+.chat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #ffffff;
+    transition: all 0.3s ease 0s;
+
+    &.active {
+        background-color: var(--background-color);
+        border: 1px solid var(--border-color);
+        border-radius: 50px 30px 30px 50px;
+    }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import './Messages.scss';
 // import avatar from '../../assets/images/avatar.jpg';
 import { Link } from 'react-router-dom';
-import ChatUser from './ChatUser/ChatUser';
+import Chat from './ChatUser/Chat';
 import Message from './Message/Message';
 
 const users = [
@@ -35,7 +35,7 @@ const messages = [
 
 const Messages = () => {
 
-    let chatUserElements = users.map(user => <ChatUser userId={user.id} userName={user.name} userAvatar={user.avatar} key={user.id} />);
+    let chatElements = users.map(user => <Chat userId={user.id} userName={user.name} userAvatar={user.avatar} key={user.id} />);
     let messageElements = messages.map((message, index) => <Message userId={message.userId} messageContent={message.message} key={index} />);
 
     return (
@@ -49,8 +49,8 @@ const Messages = () => {
                            id="search-chats-input"
                            placeholder='Search messages' />
                 </div>
-                <div className="chats__users">
-                    { chatUserElements }
+                <div className="chats__list">
+                    { chatElements }
                 </div>
             </div>
             <div className="messages__chat _section">
