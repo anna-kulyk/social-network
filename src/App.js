@@ -18,15 +18,15 @@ const App = () => {
         <Main>
           <Sidebar />
           <Routes>
-              <Route exact path='/' element={< Profile />}></Route>
+              <Route exact path='/' element={<Profile />}></Route>
               <Route path='/messages'>
-                <Route index element={< Messages />}></Route>
-                <Route path=':id' element={< Messages />}></Route>
+                <Route index element={<Messages />}></Route>
+                <Route path=':id' element={<Messages />}></Route>
               </Route>
-              <Route path='/news' element={< News />}></Route>
-              <Route path='/music' element={< Music />}></Route>
+              <Route path='/news' element={<News />}></Route>
+              <Route path='/music' element={<Music />}></Route>
               <Route exact path='/settings' element={< Settings />}></Route>
-              <Route path="*" element={< NoPage />} />
+              <Route path="*" element={<NoPage />} />
           </Routes>
         </Main>
       </div>

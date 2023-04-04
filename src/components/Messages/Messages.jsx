@@ -35,7 +35,7 @@ const messages = [
 
 const Messages = () => {
 
-    let chatElements = users.map(user => <Chat userId={user.id} userName={user.name} userAvatar={user.avatar} key={user.id} />);
+    let chatElements = users.map(user => <Chat id={user.id} name={user.name} avatar={user.avatar} key={user.id} />);
     let messageElements = messages.map((message, index) => <Message userId={message.userId} messageContent={message.message} key={index} />);
 
     return (
