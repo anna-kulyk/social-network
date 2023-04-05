@@ -20,7 +20,17 @@
 
     // &__content{}
 
-    &__likes {
-        font-size: 0.8rem;
+    &__like {
+        background: transparent;
+        align-self: start;
+        font-size: 1rem;
+        color: inherit;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &::before {
+            font-size: 1.2rem;
+        }
     }
 }

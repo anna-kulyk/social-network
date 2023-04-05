@@ -4,13 +4,15 @@ const initialState = {
     posts: [
         {
             id: 1,
-            post: 'Hi, how are you?',
-            likes: 3
+            post: `It's my first post`,
+            likes: 3,
+            liked: false
         },
         {
             id: 2,
-            post: `It's my first post`,
-            likes: 15
+            post: `React apps are made out of components.`,
+            likes: 15,
+            liked: false
         }
     ],
     postIdCount: 2,
@@ -25,13 +27,22 @@ export const postsSlice = createSlice({
             const newPost = {
                 id: state.postIdCount,
                 post: action.payload,
-                likes: 0
+                likes: 0,
+                liked: false
             }
-            state.push(newPost);
+            state.posts.push(newPost);
         },
         likePost: (state, action) => {
             const likedPost = state.posts.find(post => post.id === action.payload);
-            likedPost.likes += 1;
+            debugger;
+            if (likedPost.liked) {
+                likedPost.likes -= 1;
+                likedPost.liked = false;
+            }
+            else {
+                likedPost.likes += 1;
+                likedPost.liked = true;
+            }
         }
     },
 });

@@ -102,6 +102,15 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-trash-bin:before {
+  content: "\e909";
+}
+._icon-like-filled:before {
+  content: "\e907";
+}
+._icon-like:before {
+  content: "\e908";
+}
 ._icon-friends:before {
   content: "\e906";
 }
