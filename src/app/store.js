@@ -5,8 +5,8 @@ import chatsReduser from '../components/Messages/chatsSlice';
 
 export const store = configureStore({
     reducer: {
+        chats: chatsReduser,
         messages: messagesReducer,
         posts: postsReduser,
-        chats: chatsReduser,
     },
 })

@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux';
 
 const Posts = () => {
 
-    const posts = useSelector((state) => state.posts.value);
-    let postElements = posts.map((post, index) => <Post message={post.post} likeCount={post.likes} key={index} />);
+    const posts = useSelector((state) => state.posts.posts);
+    let postElements = posts.map((post) => <Post message={post.post} likeCount={post.likes} key={post.id} />);
 
     return (
         <div className="content__posts posts">
