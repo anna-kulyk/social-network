@@ -68,15 +68,3 @@
         width: 100%;
     }
 }
-
-.new-message {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-
-    &__input {
-        flex: 1 1 auto;
-    }
-}

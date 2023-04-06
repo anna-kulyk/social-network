@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Chat from './Chat/Chat';
 import Message from './Message/Message';
 import { useSelector } from 'react-redux';
+import NewMessage from './NewMessage/NewMessage';
 
 const Messages = () => {
 
@@ -19,14 +20,14 @@ const Messages = () => {
             <div className="messages__chats chats _section">
                 <div className="chats__title _page-title">Chats</div>
                 <div className="chats__search search-chats">
-                    <input className='search-chats__input _input' 
-                           type="text" 
-                           name="search-chats-input" 
-                           id="search-chats-input"
-                           placeholder='Search messages' />
+                    <input className='search-chats__input _input'
+                        type="text"
+                        name="search-chats-input"
+                        id="search-chats-input"
+                        placeholder='Search messages' />
                 </div>
                 <div className="chats__list">
-                    { chatElements }
+                    {chatElements}
                 </div>
             </div>
             <div className="messages__chat _section">
@@ -37,17 +38,10 @@ const Messages = () => {
                     </Link>
                 </div>
                 <div className="messages__body">
-                    { messageElements }
+                    {messageElements}
                 </div>
                 <div className="messages__footer">
-                    <form className='messages__new-message new-message' action="" method="post">
-                        <input className='new-message__input _input' 
-                               type="text" 
-                               name="new-message-input" 
-                               id="new-message-input"
-                               placeholder='Write a message...' />
-                        <button type='submit' className='new-message__send _btn'>Send</button>
-                    </form>
+                    <NewMessage />
                 </div>
             </div>
         </div>

@@ -3,15 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     posts: [
         {
-            id: 1,
-            post: `It's my first post`,
-            likes: 3,
-            liked: false
-        },
-        {
             id: 2,
             post: `React apps are made out of components.`,
             likes: 15,
+            liked: false
+        },
+        {
+            id: 1,
+            post: `It's my first post`,
+            likes: 3,
             liked: false
         }
     ],
@@ -30,7 +30,7 @@ export const postsSlice = createSlice({
                 likes: 0,
                 liked: false
             }
-            state.posts.push(newPost);
+            state.posts.unshift(newPost);
         },
         likePost: (state, action) => {
             const likedPost = state.posts.find(post => post.id === action.payload);
