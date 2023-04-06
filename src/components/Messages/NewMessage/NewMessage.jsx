@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './NewMessage.scss';
+import { useDispatch } from 'react-redux';
+import { addMessage } from '../messagesSlice';
 
 const NewMessage = () => {
+
+    const [newMessageInput, setNewMessageInput] = useState('');
+    const dispatch = useDispatch();
+
+    const sendNewMessageHandler = (e) => {
+        dispatch(addMessage(newMessageInput));
+        setNewMessageInput('');
+        e.preventDefault();
+    }
+
     return (
-        <form className='messages__new-message new-message' action="" method="post">
+        <form className='messages__new-message new-message' action="">
             <input className='new-message__input _input'
                 type="text"
                 name="new-message-input"
                 id="new-message-input"
-                placeholder='Write a message...' />
-            <button type='submit' className='new-message__send _btn'>Send</button>
+                placeholder='Write a message...'
+                autoComplete='off'
+                value={newMessageInput}
+                onChange={(e) => setNewMessageInput(e.target.value)} />
+            <button type='submit' className='new-message__send _btn' onClick={sendNewMessageHandler}>Send</button>
         </form>
     );
 };

@@ -18,7 +18,11 @@ export const messagesSlice = createSlice({
     initialState,
     reducers: {
         addMessage: (state, action) => {
-            state.value.push(action.payload);
+            const newMessage = {
+                userId: 0,
+                message: action.payload
+            }
+            state.value.push(newMessage);
         },
     },
 });

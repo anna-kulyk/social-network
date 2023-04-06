@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import avatar from '../../../assets/images/avatar.jpg';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addPost } from '../Posts/postsSlice'
+import { addPost } from '../Posts/postsSlice';
 
 const NewPost = () => {
 
