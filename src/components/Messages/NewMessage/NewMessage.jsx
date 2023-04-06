@@ -8,7 +8,7 @@ const NewMessage = () => {
     const [newMessageInput, setNewMessageInput] = useState('');
     const dispatch = useDispatch();
 
-    const sendNewMessageHandler = (e) => {
+    const sendMessageHandler = (e) => {
         const newMessage = newMessageInput.trim();
         if (newMessage !== '') {
             dispatch(addMessage(newMessage));
@@ -27,7 +27,7 @@ const NewMessage = () => {
                 autoComplete='off'
                 value={newMessageInput}
                 onChange={(e) => setNewMessageInput(e.target.value)} />
-            <button type='submit' className='new-message__send _btn' onClick={sendNewMessageHandler}>Send</button>
+            <button type='submit' className='new-message__send _btn' onClick={sendMessageHandler}>Send</button>
         </form>
     );
 };

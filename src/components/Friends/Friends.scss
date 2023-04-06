@@ -1,0 +1,13 @@
+.friends {
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        height: 100%;
+        padding: 1.5rem;
+    }
+
+    &__list {
+        flex: 1 1 auto;
+    }
+}
