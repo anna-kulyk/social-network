@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    value: [
+    friendList: [
         {
             id: 1,
             name: 'Hendry Katla',
@@ -16,7 +16,12 @@ const initialState = {
             id: 3,
             name: 'Yuli Nabu',
             avatar: 'https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80'
-        }
+        },
+        {
+            id: 4,
+            name: 'Charlotte Legrand',
+            avatar: 'https://randomuser.me/api/portraits/med/women/77.jpg'
+        },
     ],
 };
 
@@ -25,7 +30,7 @@ export const friendsSlice = createSlice({
     initialState,
     reducers: {
         addFriend: (state, action) => {
-            state.value.push(action.payload);
+            state.friendList.push(action.payload);
         },
     },
 });
