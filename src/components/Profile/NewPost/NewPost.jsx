@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './NewPost.scss';
 import avatar from '../../../assets/images/avatar.jpg';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -28,11 +29,13 @@ const NewPost = () => {
                             <img className="new-post__avatar _avatar_small" src={avatar} alt='avatar' />
                         </Link>
                     </div>
-                    <input type="text"
+                    <textarea name="new-post-input"
+                        id="new-post-input"
                         className="new-post__input _input"
                         placeholder={placeholder}
                         value={newPostInput}
-                        onChange={(e) => setNewPostInput(e.target.value)} />
+                        onChange={(e) => setNewPostInput(e.target.value)} >
+                    </textarea>
                 </div>
                 <button className="new-post__btn _btn" onClick={btnClickHandler}>Post</button>
             </form>
