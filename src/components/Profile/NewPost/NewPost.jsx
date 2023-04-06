@@ -11,8 +11,11 @@ const NewPost = () => {
     const dispatch = useDispatch();
 
     const btnClickHandler = (e) => {
-        dispatch(addPost(newPostInput));
-        setNewPostInput('');
+        const newPost = newPostInput.trim();
+        if (newPost !== '') {
+            dispatch(addPost(newPostInput));
+            setNewPostInput('');
+        }
         e.preventDefault();
     }
 

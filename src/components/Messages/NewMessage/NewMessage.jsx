@@ -9,8 +9,11 @@ const NewMessage = () => {
     const dispatch = useDispatch();
 
     const sendNewMessageHandler = (e) => {
-        dispatch(addMessage(newMessageInput));
-        setNewMessageInput('');
+        const newMessage = newMessageInput.trim();
+        if (newMessage !== '') {
+            dispatch(addMessage(newMessage));
+            setNewMessageInput('');
+        }
         e.preventDefault();
     }
 
