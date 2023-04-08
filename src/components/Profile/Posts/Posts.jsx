@@ -7,7 +7,7 @@ import { useGetPostsQuery } from '../../../services/postsService';
 const Posts = () => {
 
     const { data: posts } = useGetPostsQuery();
-    posts && console.log(posts);
+    // posts && console.log(posts);
 
     // const posts = useSelector((state) => state.posts.posts);
     const postElements = posts && posts.map((post) => <Post message={post.post} likeCount={post.likes} liked={post.liked}
