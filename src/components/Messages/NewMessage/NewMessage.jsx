@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './NewMessage.scss';
 import { useDispatch } from 'react-redux';
-import { addMessage } from '../messagesSlice';
+import { addMessage } from '../../../store/redusers/messagesSlice';
 
 const NewMessage = () => {
 

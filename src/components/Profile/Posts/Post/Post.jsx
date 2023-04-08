@@ -3,7 +3,7 @@ import './Post.scss';
 import avatar from '../../../../assets/images/avatar.jpg';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { likePost } from '../../Posts/postsSlice'
+import { likePost } from '../../../../store/redusers/postsSlice'
 
 const Post = (props) => {
 
