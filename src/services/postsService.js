@@ -12,7 +12,10 @@ export const postsApi = createApi({
                     url: '/posts?_sort=id&_order=desc&_limit=10'
                 }
             },
-            providesTags: ['Post'],
+            providesTags: (result, error, arg) =>
+                result
+                    ? [...result.map(({ id }) => ({ type: 'Post', id })), 'Post']
+                    : ['Post'],
         }),
         addPost: builder.mutation({
             query: (body) => {
@@ -23,6 +26,16 @@ export const postsApi = createApi({
                 };
             },
             invalidatesTags: ['Post'],
+        }),
+        likePost: builder.mutation({
+            query: (body) => {
+                return {
+                    url: `/posts/${body.id}`,
+                    method: "POST",
+                    body
+                };
+            },
+            invalidatesTags: (result, error, arg) => [{ type: 'Post', id: arg.id }],
         }),
     }),
 })

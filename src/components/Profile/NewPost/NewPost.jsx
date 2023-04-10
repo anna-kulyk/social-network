@@ -2,24 +2,15 @@ import React, { useState } from 'react';
 import './NewPost.scss';
 import avatar from '../../../assets/images/avatar.jpg';
 import { Link } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-// import { addPost } from '../../../store/redusers/postsSlice';
 import { useAddPostMutation } from '../../../services/postsService';
 
 const NewPost = () => {
 
     const placeholder = 'What do you want to post?';
     const [newPostInput, setNewPostInput] = useState('');
-    // const dispatch = useDispatch();
     const [addPost] = useAddPostMutation();
 
     const btnClickHandler = (e) => {
-        // const newPost = newPostInput.trim();
-        // if (newPost !== '') {
-        //     dispatch(addPost(newPostInput));
-        //     setNewPostInput('');
-        // }
-        e.preventDefault();
         const postText = newPostInput.trim();
         if (postText === '') return;
 
@@ -50,7 +41,7 @@ const NewPost = () => {
                         onChange={(e) => setNewPostInput(e.target.value)} >
                     </textarea>
                 </div>
-                <button className="new-post__btn _btn" onClick={btnClickHandler}>Post</button>
+                <button type="button" className="new-post__btn _btn" onClick={btnClickHandler}>Post</button>
             </form>
         </div>
     );
