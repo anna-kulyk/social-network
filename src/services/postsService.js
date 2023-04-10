@@ -31,7 +31,7 @@ export const postsApi = createApi({
             query: (body) => {
                 return {
                     url: `/posts/${body.id}`,
-                    method: "POST",
+                    method: "PATCH",
                     body
                 };
             },
@@ -42,4 +42,4 @@ export const postsApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetPostsQuery, useAddPostMutation } = postsApi
+export const { useGetPostsQuery, useAddPostMutation, useLikePostMutation } = postsApi

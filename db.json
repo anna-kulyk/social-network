@@ -2,31 +2,31 @@
   "posts": [
     {
       "id": 1,
-      "post": "It's my first post",
+      "content": "It's my first post",
       "likes": 3,
       "liked": false
     },
     {
       "id": 2,
-      "post": "React apps are made out of components.",
+      "content": "React apps are made out of components.",
       "likes": 15,
       "liked": false
     },
     {
       "id": 1680929458232,
-      "post": "test",
+      "content": "test",
       "likes": 0,
       "liked": false
     },
     {
       "id": 1680929463412,
-      "post": "test2",
+      "content": "test2",
       "likes": 0,
       "liked": false
     },
     {
       "id": 1681144445129,
-      "post": "test3",
+      "content": "test3",
       "likes": 0,
       "liked": false
     }

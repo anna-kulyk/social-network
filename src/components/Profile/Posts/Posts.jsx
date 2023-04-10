@@ -8,8 +8,7 @@ const Posts = () => {
     const { data: posts } = useGetPostsQuery();
     // posts && console.log(posts);
 
-    const postElements = posts && posts.map((post) => <Post message={post.post} likeCount={post.likes} liked={post.liked}
-        id={post.id} key={post.id} />);
+    const postElements = posts && posts.map((post) => <Post post={post} key={post.id} />);
 
     return (
         <div className="content__posts posts">
