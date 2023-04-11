@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Post from './Post/Post';
 import './Posts.scss';
 import { useGetPostsQuery } from '../../../services/postsService';
+import EditPostModal from './EditPostModal/EditPostModal';
 
 const Posts = () => {
 
     const { data: posts } = useGetPostsQuery();
-    // posts && console.log(posts);
+    const [editPostData, setEditPostData] = useState({ open: false, post: null });
 
-    const postElements = posts && posts.map((post) => <Post id={post.id} key={post.id} />);
+    const postElements = posts && posts.map((post) => <Post id={post.id} key={post.id} onEdit={setEditPostData} />);
 
     return (
         <div className="content__posts posts">
             <div className="posts__title _page-title">Posts</div>
             <div className="posts__list">
-                {posts && posts.length === 0 ? <div className='post _section'>No posts yet :(</div> : postElements}
+                {posts && posts.length === 0 ? <div className='post _section'>No posts yet</div> : postElements}
             </div>
+            {editPostData.open && <EditPostModal onClose={setEditPostData} post={editPostData.post} />}
         </div>
     );
 };

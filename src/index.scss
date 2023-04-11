@@ -81,6 +81,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
   border-radius: 50%;
 }
 
+.lock {
+  overflow: hidden;
+}
+
 @font-face {
   font-family: 'icons';
   font-display: swap;
@@ -104,6 +108,9 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-cross:before {
+  content: "\e90b";
+}
 ._icon-draw:before {
   content: "\e90a";
 }

@@ -4,7 +4,7 @@ import avatar from '../../../../assets/images/avatar.jpg';
 import { Link } from 'react-router-dom';
 import { useGetPostQuery, useLikePostMutation, useDeletePostMutation } from '../../../../services/postsService';
 
-const Post = ({ id }) => {
+const Post = ({ id, onEdit }) => {
 
     const [likePost] = useLikePostMutation();
     const [deletePost] = useDeletePostMutation();
@@ -26,6 +26,10 @@ const Post = ({ id }) => {
 
     const deleteBtnClickHandler = () => {
         deletePost(post.id)
+    }
+
+    const editBtnCLickHadler = () => {
+        onEdit({ open: true, post: post });
     }
 
     useEffect(() => { }, [post]);
@@ -51,7 +55,7 @@ const Post = ({ id }) => {
             <div className="post__footer">
                 <button className={`post__like ${iconClass}`} onClick={likeBtnClickHandler}>{post.likes}</button>
                 <div className='post__buttons'>
-                    <button className='post__edit _icon-draw' onClick={deleteBtnClickHandler}></button>
+                    <button className='post__edit _icon-draw' onClick={editBtnCLickHadler}></button>
                     <button className='post__delete _icon-trash-bin' onClick={deleteBtnClickHandler}></button>
                 </div>
             </div>

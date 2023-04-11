@@ -47,6 +47,16 @@ export const postsApi = createApi({
             },
             invalidatesTags: [{ type: 'Posts', id: 'LIST' }],
         }),
+        editPost: builder.mutation({
+            query: ({ id, ...body }) => {
+                return {
+                    url: `/posts/${id}`,
+                    method: "PUT",
+                    body
+                };
+            },
+            invalidatesTags: (result, error, { id }) => [{ type: 'Posts', id }],
+        }),
     }),
 })
 
@@ -57,4 +67,5 @@ export const {
     useAddPostMutation,
     useLikePostMutation,
     useGetPostQuery,
-    useDeletePostMutation } = postsApi
+    useDeletePostMutation,
+    useEditPostMutation } = postsApi
