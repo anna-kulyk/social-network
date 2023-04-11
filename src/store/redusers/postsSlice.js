@@ -34,7 +34,6 @@ export const postsSlice = createSlice({
         },
         likePost: (state, action) => {
             const likedPost = state.posts.find(post => post.id === action.payload);
-            debugger;
             if (likedPost.liked) {
                 likedPost.likes -= 1;
                 likedPost.liked = false;

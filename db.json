@@ -13,22 +13,10 @@
       "liked": false
     },
     {
-      "id": 1680929458232,
       "content": "test",
-      "likes": 0,
-      "liked": false
-    },
-    {
-      "id": 1680929463412,
-      "content": "test2",
-      "likes": 0,
-      "liked": false
-    },
-    {
-      "id": 1681144445129,
-      "content": "test3",
-      "likes": 0,
-      "liked": false
+      "likes": 1,
+      "liked": true,
+      "id": 1681155017925
     }
   ],
   "comments": [

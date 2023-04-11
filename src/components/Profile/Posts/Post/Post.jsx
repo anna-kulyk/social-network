@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Post.scss';
 import avatar from '../../../../assets/images/avatar.jpg';
 import { Link } from 'react-router-dom';
-import { useLikePostMutation } from '../../../../services/postsService';
+import { useGetPostQuery, useLikePostMutation } from '../../../../services/postsService';
 
-const Post = ({ post }) => {
-    console.log(post);
+const Post = ({ id }) => {
 
     const [likePost] = useLikePostMutation();
-    let iconClass = post.liked ? "_icon-like-filled" : "_icon-like";
+    const { isLoading, data: post } = useGetPostQuery(id);
+    let iconClass = post?.liked ? "_icon-like-filled" : "_icon-like";
 
     const likeBtnClickHandler = () => {
         const likedPost = { ...post };
-        likedPost.liked = !post.liked;
+        if (likedPost.liked) {
+            likedPost.likes -= 1;
+            likedPost.liked = false;
+        }
+        else {
+            likedPost.likes += 1;
+            likedPost.liked = true;
+        }
         likePost(likedPost);
+    }
+
+    useEffect(() => { }, [post]);
+
+    if (isLoading) {
+        return <div></div>
     }
 
     return (

@@ -17,7 +17,7 @@ const NewPost = () => {
         const postId = new Date().getTime();
         const newPost = {
             "id": postId,
-            "post": postText,
+            "content": postText,
             "likes": 0,
             "liked": false
         }

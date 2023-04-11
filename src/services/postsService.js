@@ -12,10 +12,7 @@ export const postsApi = createApi({
                     url: '/posts?_sort=id&_order=desc&_limit=10'
                 }
             },
-            providesTags: (result, error, arg) =>
-                result
-                    ? [...result.map(({ id }) => ({ type: 'Post', id })), 'Post']
-                    : ['Post'],
+            providesTags: (result, error, arg) => [{ type: 'Posts', id: 'LIST' }],
         }),
         addPost: builder.mutation({
             query: (body) => {
@@ -25,21 +22,25 @@ export const postsApi = createApi({
                     body
                 };
             },
-            invalidatesTags: ['Post'],
+            invalidatesTags: [{ type: 'Posts', id: 'LIST' }],
         }),
         likePost: builder.mutation({
-            query: (body) => {
+            query: ({ id, ...body }) => {
                 return {
-                    url: `/posts/${body.id}`,
-                    method: "PATCH",
+                    url: `/posts/${id}`,
+                    method: "PUT",
                     body
                 };
             },
-            invalidatesTags: (result, error, arg) => [{ type: 'Post', id: arg.id }],
+            invalidatesTags: (result, error, { id }) => [{ type: 'Posts', id }],
+        }),
+        getPost: builder.query({
+            query: (id) => { return { url: `posts/${id}` } },
+            providesTags: (result, error, id) => [{ type: 'Posts', id }],
         }),
     }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetPostsQuery, useAddPostMutation, useLikePostMutation } = postsApi
+export const { useGetPostsQuery, useAddPostMutation, useLikePostMutation, useGetPostQuery } = postsApi
