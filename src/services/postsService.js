@@ -38,9 +38,23 @@ export const postsApi = createApi({
             query: (id) => { return { url: `posts/${id}` } },
             providesTags: (result, error, id) => [{ type: 'Posts', id }],
         }),
+        deletePost: builder.mutation({
+            query: (id) => {
+                return {
+                    url: `/posts/${id}`,
+                    method: "DELETE"
+                };
+            },
+            invalidatesTags: [{ type: 'Posts', id: 'LIST' }],
+        }),
     }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetPostsQuery, useAddPostMutation, useLikePostMutation, useGetPostQuery } = postsApi
+export const {
+    useGetPostsQuery,
+    useAddPostMutation,
+    useLikePostMutation,
+    useGetPostQuery,
+    useDeletePostMutation } = postsApi

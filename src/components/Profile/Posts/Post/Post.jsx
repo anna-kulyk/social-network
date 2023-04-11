@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import './Post.scss';
 import avatar from '../../../../assets/images/avatar.jpg';
 import { Link } from 'react-router-dom';
-import { useGetPostQuery, useLikePostMutation } from '../../../../services/postsService';
+import { useGetPostQuery, useLikePostMutation, useDeletePostMutation } from '../../../../services/postsService';
 
 const Post = ({ id }) => {
 
     const [likePost] = useLikePostMutation();
+    const [deletePost] = useDeletePostMutation();
     const { isLoading, data: post } = useGetPostQuery(id);
-    let iconClass = post?.liked ? "_icon-like-filled" : "_icon-like";
+    const iconClass = post?.liked ? "_icon-like-filled" : "_icon-like";
 
     const likeBtnClickHandler = () => {
         const likedPost = { ...post };
@@ -23,10 +24,14 @@ const Post = ({ id }) => {
         likePost(likedPost);
     }
 
+    const deleteBtnClickHandler = () => {
+        deletePost(post.id)
+    }
+
     useEffect(() => { }, [post]);
 
     if (isLoading) {
-        return <div></div>
+        return null
     }
 
     return (
@@ -43,7 +48,13 @@ const Post = ({ id }) => {
                 </div>
             </div>
             <div className="post__content">{post.content}</div>
-            <button className={`post__like ${iconClass}`} onClick={likeBtnClickHandler}>{post.likes}</button>
+            <div className="post__footer">
+                <button className={`post__like ${iconClass}`} onClick={likeBtnClickHandler}>{post.likes}</button>
+                <div className='post__buttons'>
+                    <button className='post__edit _icon-draw' onClick={deleteBtnClickHandler}></button>
+                    <button className='post__delete _icon-trash-bin' onClick={deleteBtnClickHandler}></button>
+                </div>
+            </div>
         </div>
     );
 };

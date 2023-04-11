@@ -8,7 +8,7 @@ const NewPost = () => {
 
     const placeholder = 'What do you want to post?';
     const [newPostInput, setNewPostInput] = useState('');
-    const [addPost] = useAddPostMutation();
+    const [addPost, { isLoading }] = useAddPostMutation();
 
     const btnClickHandler = (e) => {
         const postText = newPostInput.trim();
@@ -41,7 +41,10 @@ const NewPost = () => {
                         onChange={(e) => setNewPostInput(e.target.value)} >
                     </textarea>
                 </div>
-                <button type="button" className="new-post__btn _btn" onClick={btnClickHandler}>Post</button>
+                <button type="button"
+                    className="new-post__btn _btn"
+                    disabled={isLoading}
+                    onClick={btnClickHandler}>Post</button>
             </form>
         </div>
     );
