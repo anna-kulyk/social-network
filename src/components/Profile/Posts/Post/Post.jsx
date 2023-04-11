@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import './Post.scss';
 import avatar from '../../../../assets/images/avatar.jpg';
 import { Link } from 'react-router-dom';
-import { useGetPostQuery, useLikePostMutation, useDeletePostMutation } from '../../../../services/postsService';
+import { useGetPostQuery, useLikePostMutation } from '../../../../services/postsService';
 
-const Post = ({ id, onEdit }) => {
+const Post = ({ id, onEdit, onDelete }) => {
 
     const [likePost] = useLikePostMutation();
-    const [deletePost] = useDeletePostMutation();
     const { isLoading, data: post } = useGetPostQuery(id);
     const iconClass = post?.liked ? "_icon-like-filled" : "_icon-like";
 
@@ -25,7 +24,7 @@ const Post = ({ id, onEdit }) => {
     }
 
     const deleteBtnClickHandler = () => {
-        deletePost(post.id)
+        onDelete({ open: true, post: post })
     }
 
     const editBtnCLickHadler = () => {
