@@ -2,11 +2,15 @@ import React from 'react';
 import './DeletePostModal.scss';
 import Modal from '../../../Modal/Modal';
 import { useDeletePostMutation } from '../../../../services/postsService';
+import { useDispatch } from 'react-redux';
+import { resetPostsPage } from '../../../../store/redusers/postsdataSlice';
 
 const DeletePostModal = ({ post, onClose }) => {
     const [deletePost] = useDeletePostMutation();
+    const dispatch = useDispatch();
 
     const deleteBtnHandler = () => {
+        dispatch(resetPostsPage());
         deletePost(post.id);
         onClose({ open: false, post: null })
     }

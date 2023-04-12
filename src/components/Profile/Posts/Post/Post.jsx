@@ -7,7 +7,7 @@ import { useGetPostQuery, useLikePostMutation } from '../../../../services/posts
 const Post = ({ id, onEdit, onDelete }) => {
 
     const [likePost] = useLikePostMutation();
-    const { isLoading, data: post } = useGetPostQuery(id);
+    const { isLoading, isFetching, data: post } = useGetPostQuery(id);
     const iconClass = post?.liked ? "_icon-like-filled" : "_icon-like";
 
     const likeBtnClickHandler = () => {
@@ -52,10 +52,14 @@ const Post = ({ id, onEdit, onDelete }) => {
             </div>
             <div className="post__content">{post.content}</div>
             <div className="post__footer">
-                <button className={`post__like ${iconClass}`} onClick={likeBtnClickHandler}>{post.likes}</button>
+                <button className={`post__like ${iconClass}`}
+                    onClick={likeBtnClickHandler}
+                    disabled={isFetching} >
+                    {post.likes}
+                </button>
                 <div className='post__buttons'>
-                    <button className='post__edit _icon-draw' onClick={editBtnCLickHadler}></button>
-                    <button className='post__delete _icon-trash-bin' onClick={deleteBtnClickHandler}></button>
+                    <button className='post__edit _icon-draw' onClick={editBtnCLickHadler} disabled={isFetching}></button>
+                    <button className='post__delete _icon-trash-bin' onClick={deleteBtnClickHandler} disabled={isFetching}></button>
                 </div>
             </div>
         </div>
