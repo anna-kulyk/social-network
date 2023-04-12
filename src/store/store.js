@@ -5,12 +5,14 @@ import friendsReduser from './redusers/friendsSlice';
 import { usersApi } from '../services/usersService';
 import { postsApi } from '../services/postsService';
 import { setupListeners } from '@reduxjs/toolkit/query'
+import postsReduser from './redusers/postsdataSlice';
 
 export const store = configureStore({
     reducer: {
         chats: chatsReduser,
         messages: messagesReducer,
         friends: friendsReduser,
+        postsData: postsReduser,
         [usersApi.reducerPath]: usersApi.reducer,
         [postsApi.reducerPath]: postsApi.reducer,
     },

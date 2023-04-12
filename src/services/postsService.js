@@ -7,9 +7,9 @@ export const postsApi = createApi({
     tagTypes: ['Post'],
     endpoints: (builder) => ({
         getPosts: builder.query({
-            query: () => {
+            query: (page) => {
                 return {
-                    url: '/posts?_sort=id&_order=desc&_limit=10'
+                    url: `/posts?_sort=id&_order=desc&_page=${page}&_limit=5`
                 }
             },
             providesTags: (result, error, arg) => [{ type: 'Posts', id: 'LIST' }],

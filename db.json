@@ -8,8 +8,8 @@
     },
     {
       "content": "React apps are made out of components.",
-      "likes": 16,
-      "liked": true,
+      "likes": 15,
+      "liked": false,
       "id": 2
     },
     {
@@ -17,6 +17,30 @@
       "likes": 0,
       "liked": false,
       "id": 1681155017925
+    },
+    {
+      "id": 1681325463959,
+      "content": "test2",
+      "likes": 0,
+      "liked": false
+    },
+    {
+      "id": 1681325563288,
+      "content": "test3",
+      "likes": 0,
+      "liked": false
+    },
+    {
+      "id": 1681325772189,
+      "content": "test4",
+      "likes": 0,
+      "liked": false
+    },
+    {
+      "content": "test5",
+      "likes": 1,
+      "liked": true,
+      "id": 1681325911300
     }
   ],
   "comments": [
