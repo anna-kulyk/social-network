@@ -47,7 +47,7 @@ const Post = ({ id, onEdit, onDelete }) => {
                 </div>
                 <div className="post__user">
                     <div className="post__username">Anna Sandpiper</div>
-                    <div className="post__date"></div>
+                    <div className="post__date">{new Date(post.id).toLocaleDateString()}</div>
                 </div>
             </div>
             <div className="post__content">{post.content}</div>

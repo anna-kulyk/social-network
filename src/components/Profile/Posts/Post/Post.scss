@@ -12,11 +12,18 @@
 
     // &__avatar {}
 
-    // &__user{}
+    &__user{
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-around;
+        gap: 0.5rem;
+    }
 
     // &__username{}
 
-    // &__date{}
+    &__date{
+        font-size: 0.8rem;
+    }
 
     // &__content{}
 
