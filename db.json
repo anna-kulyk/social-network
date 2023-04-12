@@ -4,13 +4,13 @@
       "content": "It's my first post",
       "likes": 3,
       "liked": false,
-      "id": 1
+      "id": 1681155010000
     },
     {
       "content": "React apps are made out of components.",
       "likes": 15,
       "liked": false,
-      "id": 2
+      "id": 1681155017000
     },
     {
       "content": "test",
@@ -41,6 +41,12 @@
       "likes": 1,
       "liked": true,
       "id": 1681325911300
+    },
+    {
+      "id": 1681332118710,
+      "content": "test6",
+      "likes": 0,
+      "liked": false
     }
   ],
   "comments": [
