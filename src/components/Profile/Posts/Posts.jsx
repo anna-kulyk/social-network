@@ -5,7 +5,7 @@ import { useGetPostsQuery } from '../../../services/postsService';
 import EditPostModal from './EditPostModal/EditPostModal';
 import DeletePostModal from './DeletePostModal/DeletePostModal';
 import { useSelector, useDispatch } from 'react-redux';
-import { setPostsData, nextPostsPage } from '../../../store/redusers/postsdataSlice';
+import { setPostsData, nextPostsPage, resetPostsPage } from '../../../store/redusers/postsdataSlice';
 
 const Posts = () => {
     const pageNumber = useSelector((state) => state.postsData.postsPage);
@@ -34,6 +34,12 @@ const Posts = () => {
             setLoadMoreBtnIsVisible(false);
         }
     }, [posts, dispatch]);
+
+    useEffect(() => {
+        return () => {
+            dispatch(resetPostsPage());
+        }
+    }, [dispatch]);
 
     return (
         <div className="content__posts posts">
