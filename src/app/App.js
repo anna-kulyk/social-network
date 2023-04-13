@@ -18,7 +18,11 @@ const App = () => {
         <Main>
           <Sidebar />
           <Routes>
-            <Route exact path='/' element={<Profile />}></Route>
+            <Route exact path='/' element={<div>Log In</div>}></Route>
+            <Route path='/profile'>
+              <Route index element={<Profile />}></Route>
+              <Route path=':id' element={<Profile />}></Route>
+            </Route>
             <Route path='/messages'>
               <Route index element={<Messages />}></Route>
               <Route path=':id' element={<Messages />}></Route>

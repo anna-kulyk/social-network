@@ -2,33 +2,25 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // Define a service using a base URL and expected endpoints
 export const usersApi = createApi({
-    // reducerPath: 'usersApi',
-    // baseQuery: fetchBaseQuery({ baseUrl: 'https://social-network.samuraijs.com/api/1.0/' }),
-    // endpoints: (builder) => ({
-    //     getUsers: builder.query({
-    //         query: () => {
-    //             return {
-    //                 url: '/users',
-    //                 headers: {
-    //                     'API-KEY': '9df0d288-597c-4b6b-b277-ab32683cd769'
-    //                 }
-    //             }
-    //         },
-    //     }),
-    // }),
     reducerPath: 'usersApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
+    tagTypes: ['User'],
     endpoints: (builder) => ({
         getUsers: builder.query({
-            query: () => {
+            query: (page) => {
                 return {
-                    url: '/users'
+                    url: `/users?_page=${page}&_limit=15`
                 }
             },
+            providesTags: (result, error, arg) => [{ type: 'User', id: 'LIST' }],
+        }),
+        getUser: builder.query({
+            query: (id) => { return { url: `users/${id}` } },
+            providesTags: (result, error, id) => [{ type: 'User', id }],
         }),
     }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetUsersQuery } = usersApi
+export const { useGetUsersQuery, useGetUserQuery } = usersApi

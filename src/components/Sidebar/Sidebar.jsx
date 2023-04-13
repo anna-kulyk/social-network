@@ -8,7 +8,7 @@ const Sidebar = () => {
             <div className="sidebar__body">
                 <nav className="sidebar__nav nav">
                     <ul className="nav__list">
-                        <li><NavLink className="nav__link _icon-user" to='/'>Profile</NavLink></li>
+                        <li><NavLink className="nav__link _icon-user" to='/profile'>Profile</NavLink></li>
                         <li><NavLink className="nav__link _icon-comment" to='/messages'>Messages</NavLink></li>
                         <li><NavLink className="nav__link _icon-news" to='/news'>News</NavLink></li>
                         <li><NavLink className="nav__link _icon-friends" to='/friends'>Friends</NavLink></li>
