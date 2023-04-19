@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './Post.scss';
-import avatar from '../../../../assets/images/avatar.jpg';
 import { Link } from 'react-router-dom';
 import { useGetPostQuery, useLikePostMutation } from '../../../../services/postsService';
 
@@ -41,12 +40,12 @@ const Post = ({ id, onEdit, onDelete }) => {
         <div className="posts__item post _section">
             <div className="post__header">
                 <div className="post__img">
-                    <Link to='/'>
-                        <img className="post__avatar _avatar_small" src={avatar} alt='avatar' />
+                    <Link to={`/profile/${post.author.id}`}>
+                        <img className="post__avatar _avatar_small" src={post.author.avatar} alt='avatar' />
                     </Link>
                 </div>
                 <div className="post__user">
-                    <div className="post__username">Anna Sandpiper</div>
+                    <div className="post__username">{post.author.name}</div>
                     <div className="post__date">{new Date(post.id).toLocaleDateString()}</div>
                 </div>
             </div>

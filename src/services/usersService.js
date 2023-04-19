@@ -15,7 +15,7 @@ export const usersApi = createApi({
             providesTags: (result, error, arg) => [{ type: 'User', id: 'LIST' }],
         }),
         getUser: builder.query({
-            query: (id) => { return { url: `users/${id}` } },
+            query: (id) => { return { url: `users/${id}?_embed=posts` } },
             providesTags: (result, error, id) => [{ type: 'User', id }],
         }),
     }),

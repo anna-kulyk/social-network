@@ -2,57 +2,123 @@
   "posts": [
     {
       "content": "It's my first post",
+      "userId": 1,
       "likes": 3,
       "liked": false,
-      "id": 1681155010000
+      "id": 1681155010000,
+      "author": {
+        "name": "Anna Sendpiper",
+        "avatar": "https://i.pinimg.com/564x/dc/84/3b/dc843b6b50cd4cb94a7b3eb97f850888.jpg",
+        "id": 1
+      }
     },
     {
       "content": "React apps are made out of components.",
+      "userId": 1,
       "likes": 15,
       "liked": false,
-      "id": 1681155017000
+      "id": 1681155017000,
+      "author": {
+        "name": "Anna Sendpiper",
+        "avatar": "https://i.pinimg.com/564x/dc/84/3b/dc843b6b50cd4cb94a7b3eb97f850888.jpg",
+        "id": 1
+      }
     },
     {
       "content": "test",
+      "userId": 1,
       "likes": 0,
       "liked": false,
-      "id": 1681155017925
+      "id": 1681155017925,
+      "author": {
+        "name": "Anna Sendpiper",
+        "avatar": "https://i.pinimg.com/564x/dc/84/3b/dc843b6b50cd4cb94a7b3eb97f850888.jpg",
+        "id": 1
+      }
     },
     {
       "id": 1681325463959,
+      "userId": 1,
       "content": "test2",
       "likes": 0,
-      "liked": false
+      "liked": false,
+      "author": {
+        "name": "Anna Sendpiper",
+        "avatar": "https://i.pinimg.com/564x/dc/84/3b/dc843b6b50cd4cb94a7b3eb97f850888.jpg",
+        "id": 1
+      }
     },
     {
       "id": 1681325563288,
+      "userId": 1,
       "content": "test3",
       "likes": 0,
-      "liked": false
+      "liked": false,
+      "author": {
+        "name": "Anna Sendpiper",
+        "avatar": "https://i.pinimg.com/564x/dc/84/3b/dc843b6b50cd4cb94a7b3eb97f850888.jpg",
+        "id": 1
+      }
     },
     {
       "id": 1681325772189,
       "content": "test4",
+      "userId": 1,
       "likes": 0,
-      "liked": false
+      "liked": false,
+      "author": {
+        "name": "Anna Sendpiper",
+        "avatar": "https://i.pinimg.com/564x/dc/84/3b/dc843b6b50cd4cb94a7b3eb97f850888.jpg",
+        "id": 1
+      }
     },
     {
       "content": "test5",
+      "userId": [1,2],
       "likes": 1,
       "liked": true,
-      "id": 1681325911300
+      "id": 1681325911300,
+      "author": {
+        "name": "Anna Sendpiper",
+        "avatar": "https://i.pinimg.com/564x/dc/84/3b/dc843b6b50cd4cb94a7b3eb97f850888.jpg",
+        "id": 1
+      }
     },
     {
       "content": "test6",
+      "userId": 1,
       "likes": 0,
       "liked": false,
+      "author": {
+        "name": "Anna Sendpiper",
+        "avatar": "https://i.pinimg.com/564x/dc/84/3b/dc843b6b50cd4cb94a7b3eb97f850888.jpg",
+        "id": 1
+      },
       "id": 1681332118710
     },
     {
-      "id": 1681415724169,
       "content": "test7",
       "likes": 0,
-      "liked": false
+      "liked": false,
+      "author": {
+        "name": "Anna Sendpiper",
+        "avatar": "https://i.pinimg.com/564x/dc/84/3b/dc843b6b50cd4cb94a7b3eb97f850888.jpg",
+        "id": 1
+      },
+      "userId": 1,
+      "id": 1681447026525
+    },
+    {
+      "id": 1681447239762,
+      "content": "first post for Hendry",
+      "likes": 0,
+      "liked": false,
+      "author": {
+        "name": "Anna Sendpiper",
+        "avatar": "https://i.pinimg.com/564x/dc/84/3b/dc843b6b50cd4cb94a7b3eb97f850888.jpg",
+        "id": 1
+      },
+      "userId": 2
     }
   ],
   "comments": [],

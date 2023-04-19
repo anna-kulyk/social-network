@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const postsApi = createApi({
     reducerPath: 'postsApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
-    tagTypes: ['Posts'],
+    tagTypes: ['Posts', 'Users'],
     endpoints: (builder) => ({
         getPosts: builder.query({
             query: (page) => {
@@ -22,7 +22,7 @@ export const postsApi = createApi({
                     body
                 };
             },
-            invalidatesTags: [{ type: 'Posts', id: 'LIST' }],
+            invalidatesTags: (result, error, { userId }) => [{ type: 'Posts', id: 'LIST' }, { type: 'User', userId }],
         }),
         likePost: builder.mutation({
             query: ({ id, ...body }) => {
@@ -45,7 +45,7 @@ export const postsApi = createApi({
                     method: "DELETE"
                 };
             },
-            invalidatesTags: [{ type: 'Posts', id: 'LIST' }],
+            invalidatesTags: (result, error, { userId }) => [{ type: 'Posts', id: 'LIST' }, { type: 'User', userId }],
         }),
         editPost: builder.mutation({
             query: ({ id, ...body }) => {
@@ -56,6 +56,18 @@ export const postsApi = createApi({
                 };
             },
             invalidatesTags: (result, error, { id }) => [{ type: 'Posts', id }],
+        }),
+        getUsers: builder.query({
+            query: (page) => {
+                return {
+                    url: `/users?_page=${page}&_limit=15`
+                }
+            },
+            providesTags: (result, error, arg) => [{ type: 'User', id: 'LIST' }],
+        }),
+        getUser: builder.query({
+            query: (id) => { return { url: `users/${id}?_embed=posts` } },
+            providesTags: (result, error, id) => [{ type: 'User', id }],
         }),
     }),
 })
@@ -68,4 +80,6 @@ export const {
     useLikePostMutation,
     useGetPostQuery,
     useDeletePostMutation,
-    useEditPostMutation } = postsApi
+    useEditPostMutation,
+    useGetUsersQuery,
+    useGetUserQuery } = postsApi
